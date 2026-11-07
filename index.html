@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark" data-accent="cyan">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Platform Interaktif & Panduan Strategi Resmi ABU Robocon 2027: The Pursuit of Mustika Nusantara (Solo, Indonesia). Pelajari peraturan lomba, peta arena, kalkulator skor, dan simulator strategi." />
+  <meta name="theme-color" content="#070b12" />
+  <title>ABU Robocon 2027 Solo | The Pursuit of Mustika Nusantara - Official Interactive Rulebook</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient Cursor Glow Effect -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Navigasi Utama Robocon 2027">
+      <a class="brand" href="#top" aria-label="ABU Robocon 2027 Solo, Indonesia">
+        <span class="brand-mark">R</span>
+        <span>ROBOCON<span class="brand-dot">2027</span></span>
+        <span class="brand-status">RULES V1.1 ACTIVE</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="nav-links">
+        <a href="#about">Konsep</a>
+        <a href="#updates" style="color:var(--accent-cyan); font-weight:700;">⚡ 12 Aturan V1.1</a>
+        <a href="#match-flow">Alur Laga</a>
+        <a href="#field">Peta Lapangan</a>
+        <a href="#calculator">Kalkulator Skor</a>
+        <a href="#rules">Regulasi &amp; Penalti</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-link-game" href="#game">🎮 Mini-Game</a>
+        <a href="#soundboard">Soundboard</a>
+      </div>
+
+      <!-- Action Controls -->
+      <div class="nav-actions">
+        <!-- Command Palette Button (Ctrl + K) -->
+        <button class="control-btn" id="btn-cmd-palette" title="Buka Command Palette (Ctrl + K)">
+          ⌘ K
+        </button>
+
+        <!-- Theme Toggle Switcher Button -->
+        <button class="control-btn" id="theme-toggle" aria-label="Ganti mode tema (Putih/Hitam)" title="Ganti Mode Gelap / Terang">
+          <svg class="icon-sun" style="display:none;" viewBox="0 0 24 24">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M12.3 2a10 10 0 0 0-.19 20 10.04 10.04 0 0 0 9.95-8.23 1 1 0 0 0-1.12-1.14 8 8 0 0 1-8.64-8.64 1 1 0 0 0-1.14-1.12A9.9 9.9 0 0 0 12.3 2z"/>
+          </svg>
+          <span class="theme-text">Dark</span>
+        </button>
+
+        <!-- Accent Palette Dropdown Button -->
+        <div class="palette-dropdown-wrapper">
+          <button class="control-btn" id="btn-palette" title="Ganti Aksen Warna Neon">
+            🎨
+          </button>
+          <div class="palette-menu" id="palette-menu">
+            <button class="color-swatch-btn swatch-cyan active" data-color="cyan" title="Cyber Cyan"></button>
+            <button class="color-swatch-btn swatch-purple" data-color="purple" title="Neon Violet"></button>
+            <button class="color-swatch-btn swatch-emerald" data-color="emerald" title="Matrix Emerald"></button>
+            <button class="color-swatch-btn swatch-amber" data-color="amber" title="Solar Amber"></button>
+            <button class="color-swatch-btn swatch-rose" data-color="rose" title="Crimson Plasma"></button>
+          </div>
+        </div>
+
+        <!-- Sound FX Button -->
+        <button class="control-btn" id="sound-toggle" aria-label="Aktifkan atau matikan suara efek" title="Efek Suara Sci-Fi & Arena">
+          <svg class="icon-sound-off" style="display:none;" viewBox="0 0 24 24">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27l4.73 4.73H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+          </svg>
+          <svg class="icon-sound-on" viewBox="0 0 24 24">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+          </svg>
+        </button>
+
+        <!-- Object Specs Modal Trigger -->
+        <button class="control-btn" id="btn-open-specs" title="Lihat Spesifikasi Bola Mustika & Blok">
+          📦 Objek
+        </button>
+
+        <!-- Quick Match Start CTA -->
+        <a class="nav-btn-action" href="#calculator">
+          Simulasi Skor <span>↗</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="rulebook-version-badge">
+          <span class="badge-tag-red">RED ALLIANCE</span>
+          <span style="color:var(--text-muted); font-size:11px;">VS</span>
+          <span class="badge-tag-blue">BLUE ALLIANCE</span>
+          <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-muted);">SOLO 2027</span>
+        </div>
+
+        <!-- Official V1.1 Update Notice Banner -->
+        <div class="hero-v11-alert">
+          <span class="alert-badge">PERUBAHAN V1.1 AKTIF</span>
+          <span><strong>Ringkasan Kritis:</strong> Tangga L1-L2 resmi dihapus (BR bebas panjat L2), Earth Block di lantai luar area legal = Failure (tanpa Forced Retry), serah terima Mustika wajib Direct Handover, dan tombol STOP fisik hardwired wajib terpasang.</span>
+        </div>
+
+        <div class="eyebrow">
+          <span class="status-dot"></span> ABU ASIA-PACIFIC ROBOT CONTEST <span class="eyebrow-line"></span> EDUTORIUM UMS
+        </div>
+
+        <h1>
+          The Pursuit of<br />
+          <span class="gradient-text">Mustika Nusantara.</span>
+        </h1>
+
+        <p class="hero-description">
+          Panduan interaktif dan simulator strategi resmi <strong>ABU Robocon 2027 Solo, Indonesia</strong>. Kuasai sinergi dua robot: <strong>Transporter Robot (TR)</strong> pengumpul logistik dan <strong>Builder Robot (BR)</strong> otonom master arsitek penegak pilar energi Nusantara dalam laga 3 menit penuh strategi.
+        </p>
+
+        <!-- Main Action Buttons -->
+        <div class="hero-actions">
+          <a class="button button-primary" href="#calculator">
+            Mulai Simulasi Skor <span>↗</span>
+          </a>
+          <a class="button button-game-cta" href="#game">
+            🎮 Mainkan Arena Mini-Game
+          </a>
+          <a class="button button-secondary" href="#field">
+            Peta Lapangan 2.5D <span>↓</span>
+          </a>
+        </div>
+
+        <!-- Hero Metadata Highlights -->
+        <div class="hero-meta">
+          <div><strong>180s</strong><span>Match Duration (No KO)</span></div>
+          <div><strong>250 Pts</strong><span>Mustika Enshrinement</span></div>
+          <div><strong>60 kg</strong><span>Max Combined Weight</span></div>
+        </div>
+      </div>
+
+      <!-- HERO ART - CENTRAL PILLAR & MUSTIKA ARTIFACT -->
+      <div class="hero-art" aria-label="Mustika Nusantara dan Central Pillar Level 2">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+
+        <div class="art-main" id="mustika-card">
+          <div class="art-grid"></div>
+          
+          <div class="art-header">
+            <span class="art-badge"><span class="status-dot"></span> MUSTIKA ARTIFACT (250 PTS)</span>
+            <span style="font-family:var(--font-mono); font-size:9px; color:var(--text-muted);">CENTRAL PILLAR L2</span>
+          </div>
+
+          <!-- Floating Robot Roles Chips -->
+          <div class="chip chip-tr" onclick="showRobotRoleModal('tr')" title="Klik untuk cek aturan Transporter Robot (TR)">
+            🚜 TR: Ground Collector (Max 3)
+          </div>
+          <div class="chip chip-br" onclick="showRobotRoleModal('br')" title="Klik untuk cek aturan Builder Robot (BR)">
+            🤖 BR: Autonomous Architect (Max 2)
+          </div>
+
+          <!-- Mustika Volleyball Display -->
+          <div class="mustika-stage">
+            <div class="mustika-orb-glow"></div>
+            <div class="mustika-volleyball" id="mustika-ball" onclick="playSpecificSound('victory'); showToast('🏆 Mustika Nusantara: Mikasa V300W Size 5 (250 Poin)');" title="Klik Bola Mustika untuk mendengarkan audio kemenangan!">
+              <span>MIKASA V300W</span>
+            </div>
+            <div class="central-pedestal">
+              <strong>CENTRAL PILLAR</strong>
+              <span>LEVEL 2 (800 mm)</span>
+            </div>
+          </div>
+
+          <!-- Telemetry HUD -->
+          <div class="mustika-telemetry-hud">
+            <div class="hud-row">
+              <span class="hud-label">SANCTUARY MANDATE:</span>
+              <span class="hud-val" id="hud-mandate-preview">UNLOCKED AT 2 TOWERS</span>
+            </div>
+            <div class="hud-row">
+              <span class="hud-label">ARENA BOUNDARY:</span>
+              <span class="hud-val">11,000 × 11,000 mm</span>
+            </div>
+            <div class="hud-row">
+              <span class="hud-label">MATCH TIMER:</span>
+              <span class="hud-val">03:00 (EXACT DURATION)</span>
+            </div>
+          </div>
+
+          <!-- Quick Inspection Buttons -->
+          <div class="mustika-actions-deck">
+            <button class="btn-quick-inspect" onclick="inspectQuickZone('central_pillar')">
+              🏛️ Central Pillar
+            </button>
+            <button class="btn-quick-inspect" onclick="inspectQuickZone('transfer_area')">
+              🔄 Transfer Area
+            </button>
+            <button class="btn-quick-inspect" onclick="openObjectModal('mustika')">
+              🏐 Mustika Specs
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER STRIP (MARQUEE) -->
+    <section class="intro-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">ABU ROBOCON 2027 SOLO, INDONESIA <b>✳</b> THE PURSUIT OF MUSTIKA NUSANTARA <b>✳</b> EDUTORIUM UMS <b>✳</b> TRANSPORTER ROBOT (TR) <b>✳</b> BUILDER ROBOT (BR) <b>✳</b> SANCTUARY MANDATE <b>✳</b> COMPLETE TOWER (2 EARTH + 1 SKY BLOCK) <b>✳</b> 250 PTS MUSTIKA <b>✳</b> NO INSTANT KO</div>
+        <div class="marquee-item">ABU ROBOCON 2027 SOLO, INDONESIA <b>✳</b> THE PURSUIT OF MUSTIKA NUSANTARA <b>✳</b> EDUTORIUM UMS <b>✳</b> TRANSPORTER ROBOT (TR) <b>✳</b> BUILDER ROBOT (BR) <b>✳</b> SANCTUARY MANDATE <b>✳</b> COMPLETE TOWER (2 EARTH + 1 SKY BLOCK) <b>✳</b> 250 PTS MUSTIKA <b>✳</b> NO INSTANT KO</div>
+      </div>
+    </section>
+
+    <!-- KONSEP & LEGEND SECTION -->
+    <section class="section container" id="about">
+      <div class="section-heading">
+        <span class="section-index">01 / LATAR BELAKANG &amp; KONSEP</span>
+        <h2>The Legend of Mustika.<br /><span class="muted-heading">Merestorasi Jaringan Energi Kuil Nusantara.</span></h2>
+        <p class="heading-note">
+          Pada zaman dahulu, para insinyur kuno membangun sirkuit candi megah yang berfungsi sebagai jaringan energi Nusantara. Di puncak arsitektur tertinggi bertakhta Mustika—artefak pemancar energi. Tugas tim robotika adalah membangun kembali menara pilar yang hilang dan menyemayamkan Mustika di Central Pillar.
+        </p>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-card">
+          <span class="rule-card-badge badge-constraint">ROBOT 1 (TR)</span>
+          <h3>Transporter Robot (TR)</h3>
+          <p>
+            Beroperasi di <strong>Ground Area</strong> dan <strong>Transfer Area</strong> saja. Bertugas mengambil 20 Earth Block dari Storage Area dan 12 Sky Block dari Ground Shared Area, lalu mengantarkannya ke Transfer Area. Dapat dikendalikan secara manual atau otomatis. Membawa maksimal 3 blok sekaligus.
+          </p>
+          <div class="rule-card-footer">BATAS AREA: Ground &amp; Transfer Area Saja</div>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-card-badge badge-constraint">ROBOT 2 (BR)</span>
+          <h3>Builder Robot (BR)</h3>
+          <p>
+            Beroperasi di <strong>Transfer Area, Level 1 (L1), dan Level 2 (L2)</strong>. Wajib <strong>100% OTONOM PENUH</strong> tanpa intervensi manual selama laga. Mengambil blok dari Transfer Area, mendaki tangga/ramp ke L1, memanjat ke L2, menyusun Complete Towers, dan menaruh Mustika. Membawa maksimal 2 blok.
+          </p>
+          <div class="rule-card-footer">KONTROL: 100% Fully Autonomous</div>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-card-badge badge-retry">STRATEGI KUNCI</span>
+          <h3>Sanctuary Mandate</h3>
+          <p>
+            Syarat mutlak sebelum tim diizinkan mengambil dan menaruh Mustika! Tim harus memiliki <strong>minimal dua (2) Complete Tower</strong> yang berdiri bersamaan, dengan <strong>minimal satu (1) menara berada di Shared Area</strong> (L1 Shared Area atau L2 Shared Area).
+          </p>
+          <div class="rule-card-footer">SYARAT BUKA: 2 Menara (Min 1 di Shared)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: 12 PEMBARUAN ATURAN PENTING V1.1 -->
+    <section class="section updates-section" id="updates">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-index">02 / PEMBARUAN ATURAN PENTING V1.1 (PERUBAHAN DARI V1.0)</span>
+          <h2>12 Regulasi Kunci Robocon 2027.<br /><span class="muted-heading">Pahami perubahan krusial dari Versi 1.0 ke Versi 1.1 agar tim terhindar dari Failure &amp; Forced Retry.</span></h2>
+          <p class="heading-note">
+            Berdasarkan dokumen resmi <em>Official Rulebook V1.1 (October 2026)</em> dan infografis pembaruan panitia ABU Robocon 2027 Solo, Indonesia.
+          </p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="updates-filter-bar">
+          <button class="filter-btn active" data-filter="all" onclick="filterUpdateCards('all')">🌟 Semua 12 Pembaruan</button>
+          <button class="filter-btn" data-filter="arena" onclick="filterUpdateCards('arena')">🏛️ Elevasi &amp; Desain Arena</button>
+          <button class="filter-btn" data-filter="objects" onclick="filterUpdateCards('objects')">📦 Penanganan Objek &amp; Logistik</button>
+          <button class="filter-btn" data-filter="robot" onclick="filterUpdateCards('robot')">🤖 Spesifikasi &amp; Sistem Robot</button>
+          <button class="filter-btn" data-filter="scoring" onclick="filterUpdateCards('scoring')">⚖️ Penilaian &amp; Strategi Menara</button>
+        </div>
+
+        <!-- 12 Cards Grid -->
+        <div class="updates-grid" id="updates-grid-container">
+          <!-- Item 01 -->
+          <div class="update-card" data-cat="arena">
+            <div class="update-card-header">
+              <span class="update-num">01</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">V1.0 Ada Tangga ➔ V1.1 Dihapus</span>
+                <span class="tag-diff cat-tag">ARENA</span>
+              </div>
+            </div>
+            <h3>Hapus Tangga Antara Level 1 (L1) dan Level 2 (L2)</h3>
+            <p class="update-card-body">
+              Pada versi V1.0 arena dilengkapi anak tangga untuk naik ke Level 2. Pada versi resmi V1.1, <strong>anak tangga antara L1 dan L2 resmi dihapus</strong>.
+            </p>
+            <div class="update-rule-box">
+              <strong>IMPLIKASI TEKNIK &amp; STRATEGI:</strong>
+              <ul>
+                <li>Builder Robot (BR) diizinkan memanjat / naik ke platform Level 2 (+300 mm dari L1) dari <strong>posisi mana pun di permukaan L1</strong>.</li>
+                <li>Akses dari Ground Area ke Level 1 tetap menggunakan ramp (panjang 3500 mm) atau tangga (anak tangga 150 mm).</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>REFERENSI: <strong>Bab 2 &amp; Bab 4.3.2</strong></span>
+              <span>ELEVASI: +300 mm</span>
+            </div>
+          </div>
+
+          <!-- Item 02 -->
+          <div class="update-card" data-cat="objects">
+            <div class="update-card-header">
+              <span class="update-num">02</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Failure (Tanpa Retry)</span>
+                <span class="tag-diff cat-tag">OBJEK</span>
+              </div>
+            </div>
+            <h3>Blok Earth Dilarang Menyentuh Lantai Luar Area yang Diizinkan</h3>
+            <p class="update-card-body">
+              Blok Earth yang menyentuh lantai arena di luar area legal langsung dinyatakan <strong>FAILURE</strong> (kegagalan manipulasi objek).
+            </p>
+            <div class="update-rule-box">
+              <strong>3 AREA LEGAL YANG DIIZINKAN:</strong>
+              <ul>
+                <li><strong style="color:var(--accent-emerald);">✓ Area Penyimpanan (Storage Area)</strong></li>
+                <li><strong style="color:var(--accent-emerald);">✓ Area Transfer (Transfer Area)</strong></li>
+                <li><strong style="color:var(--accent-emerald);">✓ Titik Pembangunan (Building Spot)</strong></li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>STATUS: <strong>Failure (Blok Gugur, Tanpa Forced Retry)</strong></span>
+              <span>REF: <strong>Bab 5.1.4</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 03 -->
+          <div class="update-card" data-cat="objects">
+            <div class="update-card-header">
+              <span class="update-num">03</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Forced Retry</span>
+                <span class="tag-diff cat-tag">MUATAN</span>
+              </div>
+            </div>
+            <h3>Robot Pembawa Mustika Tidak Boleh Membawa Blok</h3>
+            <p class="update-card-body">
+              Robot yang sedang membawa Mustika (baik TR maupun BR) <strong>dilarang keras membawa blok apa pun</strong> (baik Earth Block maupun Sky Block) pada waktu yang bersamaan.
+            </p>
+            <div class="update-rule-box">
+              <strong>KONSEKUENSI PELANGGARAN:</strong>
+              <ul>
+                <li>Membawa blok bersama Mustika memicu <strong>Forced Retry</strong> pada robot.</li>
+                <li>Blok yang dibawa bersama Mustika seketika dinyatakan <strong>tidak valid (gugur)</strong>.</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>SANKSI: <strong>Forced Retry &amp; Blok Gugur</strong></span>
+              <span>REF: <strong>Bab 3.4.6 &amp; 6.4</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 04 -->
+          <div class="update-card" data-cat="objects">
+            <div class="update-card-header">
+              <span class="update-num">04</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Direct Handover</span>
+                <span class="tag-diff cat-tag">LOGISTIK</span>
+              </div>
+            </div>
+            <h3>Serah Terima Mustika Harus di Area Transfer Tanpa Sentuh Lantai</h3>
+            <p class="update-card-body">
+              Mustika <strong>wajib diserahkan langsung (direct handover)</strong> dari TR ke BR di Area Transfer. Bola dilarang keras menyentuh lantai Transfer Area!
+            </p>
+            <div class="update-rule-box">
+              <strong>PROTOKOL SERAH TERIMA:</strong>
+              <ul>
+                <li>BR boleh menerima dengan gripper, baki, maupun keranjang.</li>
+                <li>TR baru boleh melepas Mustika setelah bola sepenuhnya ditopang BR.</li>
+                <li>Jika menyentuh lantai = <em>Dropped Mustika</em> (dikeluarkan wasit &amp; Mustika Pillar di Ground diisi ulang).</li>
+                <li>TR dilarang menaruh objek di Transfer Area selagi roda menyentuh Ground.</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>KONSEKUENSI: <strong>Dropped Mustika ➔ Isi Ulang Pilar</strong></span>
+              <span>REF: <strong>Bab 3.4.5</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 05 -->
+          <div class="update-card" data-cat="scoring">
+            <div class="update-card-header">
+              <span class="update-num">05</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Aturan Penilaian</span>
+                <span class="tag-diff cat-tag">SKOR</span>
+              </div>
+            </div>
+            <h3>Skor Sky Block Dihitung Berdasarkan Warna di Bagian Atas</h3>
+            <p class="update-card-body">
+              Sky Block hanya bernilai (+40 pt di L1, +80 pt di L2) jika <strong>diletakkan datar (rests flat) dan warna tim sepenuhnya menghadap ke atas</strong>.
+            </p>
+            <div class="update-rule-box">
+              <strong>KASUS KHUSUS TERBALIK / MIRING:</strong>
+              <ul>
+                <li>Jika Sky Block kemudian dibalik/miring sehingga tidak ada warna tim yang menghadap ke atas, <strong>poin tetap milik tim yang terakhir menampilkan warnanya</strong>.</li>
+                <li>Warna di puncak menara menentukan siapa pemilik Complete Tower tersebut.</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>NILAI: <strong>L1 = 40 Pts | L2 = 80 Pts</strong></span>
+              <span>REF: <strong>Bab 3.5.6</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 06 -->
+          <div class="update-card" data-cat="scoring">
+            <div class="update-card-header">
+              <span class="update-num">06</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Flip Only</span>
+                <span class="tag-diff cat-tag">TAKTIK</span>
+              </div>
+            </div>
+            <h3>Sky Block Hanya Boleh Diangkat untuk Dibalik (Flipped)</h3>
+            <p class="update-card-body">
+              Sky Block di atas menara boleh diangkat oleh robot <strong>hanya untuk membalik (flip) warnanya</strong> dan <strong>WAJIB ditaruh kembali pada menara yang sama</strong>.
+            </p>
+            <div class="update-rule-box">
+              <strong>ATURAN &amp; SANKSI:</strong>
+              <ul>
+                <li>Dilarang memindahkan Sky Block ke menara lain ➔ <strong>Forced Retry</strong>.</li>
+                <li>Jika Sky Block jatuh saat diangkat ➔ <strong>Forced Retry</strong> dan menara direstorasi wasit ke kondisi sebelum insiden.</li>
+                <li>Skor menara baru berpindah saat proses flip telah selesai sempurna.</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>SANKSI PINDAH: <strong>Forced Retry &amp; Restorasi Menara</strong></span>
+              <span>REF: <strong>Bab 3.5.8</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 07 -->
+          <div class="update-card" data-cat="arena">
+            <div class="update-card-header">
+              <span class="update-num">07</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Navigasi BR</span>
+                <span class="tag-diff cat-tag">ARENA</span>
+              </div>
+            </div>
+            <h3>BR Dapat Melewati Rintangan dan Menanjak Bebas</h3>
+            <p class="update-card-body">
+              Builder Robot (BR) diizinkan bergerak bebas menanjak dan melewati rintangan elevasi sesuai kontur dan desain resmi arena.
+            </p>
+            <div class="update-rule-box">
+              <strong>AREA GERAK BR:</strong>
+              <ul>
+                <li>Mendaki ke Level 1 via ramp landai (3500 mm) atau tangga (step 150 mm).</li>
+                <li>Memanjat elevasi 300 mm dari Level 1 ke Level 2 dari sudut mana pun.</li>
+                <li>BR boleh menyentuh Ground Area saat start awal, saat mendaki ke L1, atau saat proses Retry.</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>ZONA BR: <strong>Transfer Area, Level 1 &amp; Level 2</strong></span>
+              <span>REF: <strong>Bab 4.3.2</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 08 -->
+          <div class="update-card" data-cat="scoring">
+            <div class="update-card-header">
+              <span class="update-num">08</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Refill Berkelanjutan</span>
+                <span class="tag-diff cat-tag">MUSTIKA</span>
+              </div>
+            </div>
+            <h3>Mustika Disuplai di Pilar hingga Salah Satu Berhasil Disemayamkan</h3>
+            <p class="update-card-body">
+              Mustika Pillar di Ground Area selalu disuplai ulang oleh wasit jika bola diambil atau terjatuh, hingga salah satu Mustika berhasil disemayamkan di Central Pillar.
+            </p>
+            <div class="update-rule-box">
+              <strong>SYARAT AMBIL MUSTIKA:</strong>
+              <ul>
+                <li>Hanya tim yang sudah memenuhi <strong>Sanctuary Mandate</strong> yang berhak mengambil Mustika dari pilar.</li>
+                <li>Setiap tim hanya boleh memegang 1 Mustika pada satu waktu.</li>
+                <li>Hanya Mustika pertama yang sah di Central Pillar (+250 Pts). Begitu sah, Mustika lain tidak valid. Laga tetap berlangsung 3 menit penuh.</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>POIN ARTEFAK: <strong>250 Poin Kemenangan</strong></span>
+              <span>REF: <strong>Bab 3.6.6</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 09 -->
+          <div class="update-card" data-cat="robot">
+            <div class="update-card-header">
+              <span class="update-num">09</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">TR: 3 | BR: 2</span>
+                <span class="tag-diff cat-tag">MUATAN</span>
+              </div>
+            </div>
+            <h3>Jumlah Blok yang Dibawa Dibatasi Ketat</h3>
+            <p class="update-card-body">
+              Kapasitas angkut maksimum dibatasi secara regulasi untuk menjaga keseimbangan permainan dan bobot robot:
+            </p>
+            <div class="update-rule-box">
+              <strong>BATAS ANGKUT MAKSIMUM:</strong>
+              <ul>
+                <li><strong>Transporter Robot (TR): Maksimal 3 blok</strong> (Earth/Sky) sekaligus.</li>
+                <li><strong>Builder Robot (BR): Maksimal 2 blok</strong> sekaligus.</li>
+                <li>Membawa lebih dari batas ➔ <strong>Forced Retry</strong>. Blok yang diambil terakhir di atas limit dinyatakan tidak valid (gugur).</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>SANKSI: <strong>Forced Retry &amp; Blok Gugur</strong></span>
+              <span>REF: <strong>Bab 3.4.3 &amp; 6.4</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 10 -->
+          <div class="update-card" data-cat="robot">
+            <div class="update-card-header">
+              <span class="update-num">10</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Wajib Otonom</span>
+                <span class="tag-diff cat-tag">KEAMANAN</span>
+              </div>
+            </div>
+            <h3>BR Wajib Memiliki Fungsi Berhenti Sementara (Freeze/Resume)</h3>
+            <p class="update-card-body">
+              Karena BR wajib beroperasi 100% otonom, BR <strong>wajib dilengkapi fungsi remote Freeze/Resume</strong> yang dapat diaktifkan operator sesuai instruksi wasit.
+            </p>
+            <div class="update-rule-box">
+              <strong>FUNGSI FREEZE SWITCH:</strong>
+              <ul>
+                <li>Menjeda seketika semua motor/aktuator saat anggota tim atau wasit perlu masuk ke Shared Area (misal saat tim lawan meminta retry).</li>
+                <li>Robot dapat melanjutkan gerakan setelah wasit mengizinkan. Menggunakan fungsi ini <strong>bukan intervensi manual ilegal</strong>.</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>KENDALI: <strong>Remote Wi-Fi / Zigbee / Bluetooth</strong></span>
+              <span>REF: <strong>Bab 11.4</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 11 -->
+          <div class="update-card" data-cat="robot">
+            <div class="update-card-header">
+              <span class="update-num">11</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Massa &le; 60 kg</span>
+                <span class="tag-diff cat-tag">ROBOT</span>
+              </div>
+            </div>
+            <h3>Batas Berat Total Gabungan Kedua Robot Maksimal 60 kg</h3>
+            <p class="update-card-body">
+              Total massa gabungan kedua robot (TR + BR) beserta seluruh baterai, perangkat kontroler manual, dan kabel tanding <strong>tidak boleh melebihi 60 kg</strong>.
+            </p>
+            <div class="update-rule-box">
+              <strong>KETENTUAN TIMBANGAN:</strong>
+              <ul>
+                <li>Perangkat setup/aktivasi/retry (laptop, tombol mulai eksternal) dikecualikan dari timbangan, namun harus disingkirkan sebelum start.</li>
+                <li>Peti transportasi resmi robot: maks 1500 × 800 × 900 mm (berat kotor maks 180 kg disiapkan panitia).</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>BATAS MASSA: <strong>&le; 60 kg Gabungan</strong></span>
+              <span>REF: <strong>Bab 11.8</strong></span>
+            </div>
+          </div>
+
+          <!-- Item 12 -->
+          <div class="update-card" data-cat="robot">
+            <div class="update-card-header">
+              <span class="update-num">12</span>
+              <div class="update-tags-wrap">
+                <span class="tag-diff v11-diff">Wajib Hardwired</span>
+                <span class="tag-diff cat-tag">SAFETY</span>
+              </div>
+            </div>
+            <h3>Tombol Berhenti Darurat Fisik Hardwired Merah Wajib Ada</h3>
+            <p class="update-card-body">
+              Setiap robot (baik TR maupun BR) <strong>wajib dilengkapi tombol henti darurat fisik (emergency STOP) berwarna merah</strong> yang terpasang di bodi robot.
+            </p>
+            <div class="update-rule-box">
+              <strong>REGULASI MUTLAK KESELAMATAN:</strong>
+              <ul>
+                <li>Tombol harus mudah dilihat, mudah dijangkau, dan <strong>terhubung langsung secara kabel (hardwired)</strong> untuk memutus sistem seketika.</li>
+                <li>Tombol remote/nirkabel <strong>DILARANG</strong> dijadikan pengganti emergency stop fisik utama!</li>
+              </ul>
+            </div>
+            <div class="update-card-footer">
+              <span>STANDAR: <strong>Hardwired Red Physical Button</strong></span>
+              <span>REF: <strong>Bab 12.2</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: MATCH CHRONOLOGY & TIMELINE (ALUR PERTANDINGAN 6 TAHAP) -->
+    <section class="section container" id="match-flow">
+      <div class="section-heading">
+        <span class="section-index">03 / ALUR PERTANDINGAN 6 TAHAP (KRONOLOGI LAGA)</span>
+        <h2>Timeline &amp; Siklus Laga 3 Menit.<br /><span class="muted-heading">Dari fase persiapan 1 menit hingga detik terakhir penentuan kemenangan di buzzer.</span></h2>
+        <p class="heading-note">
+          Memahami urutan eksekusi strategi sangat krusial. Setiap detik di arena Edutorium UMS menentukan raihan poin dan kelayakan menyemayamkan Mustika.
+        </p>
+      </div>
+
+      <div class="timeline-deck">
+        <!-- Step 1 -->
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <span class="timeline-step-badge">TAHAP 01</span>
+            <span class="timeline-time-badge">T-60s s.d T-0s (Fase Setup)</span>
+          </div>
+          <h3>Persiapan Arena &amp; Posisi Robot</h3>
+          <p>
+            Tim diberikan waktu 1 menit untuk menyiapkan TR dan BR di arena. Kedua robot harus muat sepenuhnya di dalam Start/Retry Zone masing-masing (700 × 700 mm). Tim bebas menentukan zona mana untuk TR dan mana untuk BR.
+          </p>
+          <ul class="timeline-check-list">
+            <li><span class="bullet">✓</span> <strong>Earth Blocks (20 unit):</strong> Ditata tim di Storage Area, maksimal tumpukan 2 blok per kolom.</li>
+            <li><span class="bullet">✓</span> <strong>Sky Blocks (12 unit):</strong> Disiapkan panitia di Ground Shared Area dalam pola catur 5×5 (tengah kosong).</li>
+            <li><span class="bullet">✓</span> <strong>Mustika:</strong> Diletakkan panitia di atas Mustika Pillar (tinggi 500 mm).</li>
+            <li><span class="bullet">✓</span> <strong>Kru:</strong> Maksimal 3 anggota tim + 3 pit crew boleh membantu setup.</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <span class="timeline-step-badge">TAHAP 02</span>
+            <span class="timeline-time-badge">T=0s s.d T=40s (Start Laga)</span>
+          </div>
+          <h3>Peluit Mulai &amp; Logistik Awal TR</h3>
+          <p>
+            Wasit membunyikan buzzer/peluit. Laga 180 detik dimulai. TR bergerak memanen Earth Blocks dari Storage Area dan Sky Blocks dari Ground Shared Area, membawanya (maks 3 blok) ke Transfer Area.
+          </p>
+          <ul class="timeline-check-list">
+            <li><span class="bullet">✓</span> <strong>Transfer Points:</strong> TR melepaskan blok sepenuhnya di dalam batas Transfer Area (+5 Poin per blok).</li>
+            <li><span class="bullet">✓</span> Poin transfer terkunci permanen meski blok nantinya diambil BR untuk menara.</li>
+            <li><span class="bullet">⚠️</span> Dilarang menyeret blok di lantai arena! Blok wajib diangkat aktif saat dipindahkan.</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <span class="timeline-step-badge">TAHAP 03</span>
+            <span class="timeline-time-badge">T=30s s.d T=90s (Konstruksi)</span>
+          </div>
+          <h3>Pembangunan Menara Lengkap oleh BR</h3>
+          <p>
+            Builder Robot (100% otonom) mengambil blok dari Transfer Area, mendaki ke Level 1 atau memanjat ke Level 2 (+900 mm), lalu membangun Complete Tower di target Building Spot hijau (500 × 500 mm).
+          </p>
+          <ul class="timeline-check-list">
+            <li><span class="bullet">✓</span> <strong>Urutan Wajib:</strong> Earth Bawah (10/20 pt) ➔ Earth Tengah (20/40 pt) ➔ Sky Block Mahkota (40/80 pt).</li>
+            <li><span class="bullet">✓</span> <strong>Total 1 Menara Lengkap:</strong> Level 1 = 70 Pts | Level 2 = 140 Pts.</li>
+            <li><span class="bullet">✓</span> Warna tim pada sisi atas Sky Block menandai kepemilikan Complete Tower tersebut.</li>
+          </ul>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <span class="timeline-step-badge">TAHAP 04</span>
+            <span class="timeline-time-badge">Kondisi Kunci Terbuka</span>
+          </div>
+          <h3>Pemenuhan Mandat Sanctuary (Sanctuary Mandate)</h3>
+          <p>
+            Syarat gerbang pembuka hak mengambil bola Mustika. Mandat ini terverifikasi secara resmi jika tim berhasil mendirikan:
+          </p>
+          <ul class="timeline-check-list">
+            <li><span class="bullet">1.</span> <strong>Minimal 2 Menara Lengkap (Complete Towers)</strong> berdiri kokoh pada saat bersamaan.</li>
+            <li><span class="bullet">2.</span> <strong>Minimal 1 menara berada di Shared Area</strong> (L1 Shared Area atau platform Level 2).</li>
+            <li><span class="bullet">🔒</span> <strong>Permanen:</strong> Sekali mandat tercapai, hak mengambil Mustika tetap sah seumur laga, meskipun menara kemudian diganggu lawan.</li>
+          </ul>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <span class="timeline-step-badge">TAHAP 05</span>
+            <span class="timeline-time-badge">T=90s s.d T=150s (Misi Puncak)</span>
+          </div>
+          <h3>Eksekusi Mustika Nusantara (250 Poin)</h3>
+          <p>
+            Setelah Sanctuary Mandate terbuka, TR meluncur mengambil bola voli Mikasa V300W dari Mustika Pillar di Ground, lalu mengantarkannya ke Transfer Area.
+          </p>
+          <ul class="timeline-check-list">
+            <li><span class="bullet">✓</span> <strong>Direct Handover:</strong> TR menyerahkan Mustika langsung ke BR di Transfer Area tanpa menyentuh lantai!</li>
+            <li><span class="bullet">✓</span> <strong>Penyemayaman di Central Pillar:</strong> BR membawa Mustika ke Level 2 dan menaruhnya di atas Central Pillar (tinggi 800 mm).</li>
+            <li><span class="bullet">🏆</span> <strong>250 Poin Kemenangan:</strong> Sah jika bola stabil saat dilepas BR. Hanya Mustika pertama yang sah!</li>
+          </ul>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <span class="timeline-step-badge">TAHAP 06</span>
+            <span class="timeline-time-badge">T=150s s.d T=180s (Detik Terakhir)</span>
+          </div>
+          <h3>Duel Perebutan Poin &amp; Akhir Pertandingan</h3>
+          <p>
+            Tidak ada kemenangan instan (No Early KO)! Laga berjalan penuh 3 menit. Tim dapat terus membangun menara atau membalik (flip) Sky Block lawan untuk merebut poin puncak.
+          </p>
+          <ul class="timeline-check-list">
+            <li><span class="bullet">⏱️</span> <strong>Buzzer 180s:</strong> Semua robot harus berhenti seketika. Objek yang masih disentuh robot tidak dihitung poin!</li>
+            <li><span class="bullet">⚖️</span> <strong>Evaluasi Wasit:</strong> Pemenang ditentukan skor total tertinggi saat buzzer.</li>
+            <li><span class="bullet">🎯</span> <strong>Jika Skor Seri:</strong> Ditentukan berurutan: Mustika di Central Pillar ➔ Jumlah Sky Block tim di puncak ➔ Total blok di L2 ➔ Total blok di L1.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: INTERACTIVE 2.5D / BLUEPRINT FIELD INSPECTOR -->
+    <section class="section container" id="field">
+      <div class="section-heading">
+        <span class="section-index">04 / PETA LAPANGAN INTERAKTIF (11 × 11 METER)</span>
+        <h2>Blueprint Field Inspector.<br /><span class="muted-heading">Klik area lapangan untuk membedah dimensi, zona, dan regulasi.</span></h2>
+        <p class="heading-note">
+          Visualisasi tata letak lapangan resmi ABU Robocon 2027 Solo berukuran 11.000 mm × 11.000 mm lengkap dengan elevasi Level 1 (600 mm) dan Level 2 (900 mm).
+        </p>
+      </div>
+
+      <div class="field-inspector-layout">
+        <!-- Blueprint Map SVG Card -->
+        <div class="blueprint-canvas-card">
+          <div class="blueprint-title-row">
+            <span>OFFICIAL FIELD LAYOUT (TOP-DOWN VECTOR)</span>
+            <span style="color:var(--accent-cyan);">KLIK ZONA UNTUK INSPEKSI</span>
+          </div>
+
+          <div class="arena-map-svg-wrap">
+            <svg class="arena-svg" viewBox="0 0 1000 1000">
+              <!-- Outer Ground Area Border -->
+              <rect x="20" y="20" width="960" height="960" fill="#141f33" stroke="#334155" stroke-width="3" />
+              
+              <!-- Red Team Ground Side (Left) -->
+              <path class="arena-zone-node" data-zone="ground_red" d="M 20 20 L 500 20 L 500 980 L 20 980 Z" fill="#ef444415" stroke="#ef444440" stroke-width="1.5" />
+              
+              <!-- Blue Team Ground Side (Right) -->
+              <path class="arena-zone-node" data-zone="ground_blue" d="M 500 20 L 980 20 L 980 980 L 500 980 Z" fill="#3b82f615" stroke="#3b82f640" stroke-width="1.5" />
+
+              <!-- Storage Area Red (Top Left) -->
+              <rect class="arena-zone-node" data-zone="storage_red" x="50" y="50" width="160" height="90" fill="#ef444440" stroke="#ef4444" stroke-width="2" rx="4" />
+              <text x="130" y="100" fill="#fca5a5" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">STORAGE RED (20)</text>
+
+              <!-- Storage Area Blue (Top Right) -->
+              <rect class="arena-zone-node" data-zone="storage_blue" x="790" y="50" width="160" height="90" fill="#3b82f640" stroke="#3b82f6" stroke-width="2" rx="4" />
+              <text x="870" y="100" fill="#93c5fd" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">STORAGE BLUE (20)</text>
+
+              <!-- Start/Retry Zone Red (Bottom Left) -->
+              <rect class="arena-zone-node" data-zone="start_red" x="50" y="860" width="100" height="100" fill="#dc2626" stroke="#fff" stroke-width="1.5" rx="4" />
+              <text x="100" y="915" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">START RED</text>
+
+              <!-- Start/Retry Zone Blue (Bottom Right) -->
+              <rect class="arena-zone-node" data-zone="start_blue" x="850" y="860" width="100" height="100" fill="#2563eb" stroke="#fff" stroke-width="1.5" rx="4" />
+              <text x="900" y="915" fill="#fff" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">START BLUE</text>
+
+              <!-- Ground Shared Area (Bottom Center - 12 Sky Blocks) -->
+              <rect class="arena-zone-node" data-zone="ground_shared" x="430" y="780" width="140" height="140" fill="#f59e0b25" stroke="#f59e0b" stroke-width="2" rx="6" />
+              <text x="500" y="845" fill="#fbbf24" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">GROUND SHARED</text>
+              <text x="500" y="865" fill="#fef3c7" font-size="9" font-family="monospace" text-anchor="middle">12 Sky Blocks</text>
+
+              <!-- Mustika Pillar on Ground (Top Center) -->
+              <circle class="arena-zone-node" data-zone="mustika_pillar" cx="500" cy="90" r="30" fill="#d97706" stroke="#fbbf24" stroke-width="3" />
+              <text x="500" y="94" fill="#fff" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">MUSTIKA</text>
+
+              <!-- Level 1 Platform (6000 x 6000 mm, 600 mm height) -->
+              <rect class="arena-zone-node" data-zone="level_1" x="230" y="220" width="540" height="520" fill="#1e293b" stroke="#64748b" stroke-width="3" rx="8" />
+              <text x="500" y="250" fill="#cbd5e1" font-size="14" font-family="monospace" text-anchor="middle" font-weight="bold">LEVEL 1 PLATFORM (+600 mm)</text>
+
+              <!-- Transfer Area Red & Blue (Sides of L1) -->
+              <rect class="arena-zone-node" data-zone="transfer_red" x="230" y="380" width="80" height="90" fill="#ea580c80" stroke="#fb923c" stroke-width="2" />
+              <text x="270" y="430" fill="#fff" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">TR-AREA RED</text>
+
+              <rect class="arena-zone-node" data-zone="transfer_blue" x="690" y="380" width="80" height="90" fill="#0284c780" stroke="#38bdf8" stroke-width="2" />
+              <text x="730" y="430" fill="#fff" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">TR-AREA BLUE</text>
+
+              <!-- Ramp & Stairs Access Nodes -->
+              <rect class="arena-zone-node" data-zone="ramp_red" x="230" y="270" width="40" height="90" fill="#ef444430" stroke="#f87171" stroke-width="1.5" />
+              <text x="250" y="320" fill="#fca5a5" font-size="8" font-family="monospace" text-anchor="middle" transform="rotate(-90 250 320)">RAMP RED</text>
+
+              <rect class="arena-zone-node" data-zone="ramp_blue" x="730" y="270" width="40" height="90" fill="#3b82f630" stroke="#60a5fa" stroke-width="1.5" />
+              <text x="750" y="320" fill="#bfdbfe" font-size="8" font-family="monospace" text-anchor="middle" transform="rotate(90 750 320)">RAMP BLUE</text>
+
+              <!-- L1 Building Spots (Green squares) -->
+              <rect class="arena-zone-node" data-zone="bspot_l1_red" x="330" y="400" width="50" height="50" fill="#15803d" stroke="#4ade80" stroke-width="2" rx="3" />
+              <text x="355" y="430" fill="#fff" font-size="8" font-family="monospace" text-anchor="middle">L1 SPOT</text>
+
+              <rect class="arena-zone-node" data-zone="bspot_l1_blue" x="620" y="400" width="50" height="50" fill="#15803d" stroke="#4ade80" stroke-width="2" rx="3" />
+              <text x="645" y="430" fill="#fff" font-size="8" font-family="monospace" text-anchor="middle">L1 SPOT</text>
+
+              <rect class="arena-zone-node" data-zone="bspot_l1_shared" x="475" y="660" width="50" height="50" fill="#166534" stroke="#86efac" stroke-width="2" rx="3" />
+              <text x="500" y="690" fill="#fff" font-size="7" font-family="monospace" text-anchor="middle">L1 SHARED</text>
+
+              <!-- Level 2 Platform (+900 mm from Ground, 3000 x 3000 mm) -->
+              <rect class="arena-zone-node" data-zone="level_2" x="360" y="320" width="280" height="280" fill="#0f172a" stroke="#38bdf8" stroke-width="2.5" rx="6" />
+              <text x="500" y="348" fill="#38bdf8" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">LEVEL 2 (ALL SHARED +900 mm)</text>
+              <text x="500" y="364" fill="#fbbf24" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">⚡ V1.1: TANPA TANGGA (Bebas Panjat 300 mm)</text>
+
+              <!-- L2 Building Spots -->
+              <rect class="arena-zone-node" data-zone="bspot_l2" x="475" y="390" width="50" height="50" fill="#15803d" stroke="#4ade80" stroke-width="2" rx="3" />
+              <text x="500" y="420" fill="#fff" font-size="8" font-family="monospace" text-anchor="middle">L2 SPOT</text>
+
+              <!-- Central Pillar (Level 2 Apex) -->
+              <circle class="arena-zone-node" data-zone="central_pillar" cx="500" cy="500" r="36" fill="#f59e0b" stroke="#fff" stroke-width="3" />
+              <text x="500" y="504" fill="#000" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">CENTRAL</text>
+              <text x="500" y="516" fill="#000" font-size="8" font-family="monospace" text-anchor="middle">PILLAR</text>
+            </svg>
+          </div>
+
+          <!-- Zone Quick Selector Pills -->
+          <div class="zone-selector-pills">
+            <button class="btn-zone-pill active" onclick="inspectQuickZone('central_pillar')">Central Pillar (L2)</button>
+            <button class="btn-zone-pill" onclick="inspectQuickZone('transfer_red')">Transfer Area</button>
+            <button class="btn-zone-pill" onclick="inspectQuickZone('ground_shared')">Ground Shared Area</button>
+            <button class="btn-zone-pill" onclick="inspectQuickZone('level_1')">Level 1 (+600 mm)</button>
+            <button class="btn-zone-pill" onclick="inspectQuickZone('level_2')">Level 2 (+900 mm)</button>
+            <button class="btn-zone-pill" onclick="inspectQuickZone('storage_red')">Storage Area (20)</button>
+            <button class="btn-zone-pill" onclick="inspectQuickZone('mustika_pillar')">Mustika Pillar</button>
+          </div>
+        </div>
+
+        <!-- Details Card -->
+        <div class="inspector-details-card">
+          <span class="inspector-zone-badge" id="insp-badge">ZONA TERTINGGI / APEX MISI</span>
+          <h3 class="inspector-zone-title" id="insp-title">Central Pillar (Level 2)</h3>
+          <p class="inspector-zone-desc" id="insp-desc">
+            Tiang silinder tertinggi di Level 2 tempat bola Mustika harus disemayamkan oleh Builder Robot (BR) untuk merebut 250 poin kemenangan.
+          </p>
+
+          <div class="inspector-specs-table" id="insp-table">
+            <div class="inspector-spec-item">
+              <strong>Dimensi Fisik</strong>
+              <span id="insp-dim">Tinggi 800 mm, Diameter 270 mm</span>
+            </div>
+            <div class="inspector-spec-item">
+              <strong>Cekungan Puncak</strong>
+              <span id="insp-bowl">Diameter 180 mm, Kedalaman 100 mm</span>
+            </div>
+            <div class="inspector-spec-item">
+              <strong>Akses Robot</strong>
+              <span id="insp-access">Hanya Builder Robot (BR)</span>
+            </div>
+            <div class="inspector-spec-item">
+              <strong>Syarat Eksekusi</strong>
+              <span id="insp-req">Sanctuary Mandate Wajib Aktif</span>
+            </div>
+            <div class="inspector-spec-item">
+              <strong>Nilai Poin</strong>
+              <span id="insp-pts" style="color:var(--accent-cyan); font-weight:700;">250 Poin Kemenangan</span>
+            </div>
+          </div>
+
+          <button class="button button-primary" style="width:100%;" onclick="openObjectModal('mustika')">
+            📦 Rincian Bola Mustika &amp; Blok ↗
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: REAL-TIME SCORING CALCULATOR & STRATEGY ENGINE -->
+    <section class="section scoring-section" id="calculator">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-index">05 / REAL-TIME SCORE ENGINE &amp; STRATEGY</span>
+          <h2>Kalkulator Skor Lomba.<br /><span class="muted-heading">Simulasikan raihan poin dan verifikasi Sanctuary Mandate secara live.</span></h2>
+          <p class="heading-note">
+            Hitung akumulasi skor logistik TR, penumpukan menara L1 dan L2, aksi membalik Sky Block lawan, serta peletakan Mustika sesuai bab 8 Rulebook V1.1.
+          </p>
+        </div>
+
+        <div class="scoring-engine-grid">
+          <!-- Calculator Stepper Controls Card -->
+          <div class="calculator-card">
+            <!-- Strategy Simulation Presets -->
+            <div class="calc-preset-bar">
+              <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted); align-self:center;">Preset Skenario:</span>
+              <button class="btn-preset" onclick="applyScorePreset('mandate')">⚡ Mandat Minimum</button>
+              <button class="btn-preset" onclick="applyScorePreset('level2_dom')">🏛️ Dominasi Level 2</button>
+              <button class="btn-preset" onclick="applyScorePreset('mustika_rush')">🏆 Mustika Rush (+250)</button>
+              <button class="btn-preset" onclick="applyScorePreset('max_score')">🔥 Skor Maksimal</button>
+            </div>
+
+            <!-- Group 1: Logistics TR -->
+            <div class="calc-group-title">
+              <span>1. LOGISTIK TRANSPORTER ROBOT (TR)</span>
+              <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted);">Bab 8.1</span>
+            </div>
+
+            <div class="calc-counter-row">
+              <div class="calc-label-wrap">
+                <strong>Blok Diantar ke Transfer Area</strong>
+                <small>+5 Poin / Blok (Earth Block / Sky Block)</small>
+              </div>
+              <div class="counter-controls">
+                <button class="btn-counter" onclick="changeCalcScore('transfer_blocks', -1)">−</button>
+                <span class="counter-val" id="val-transfer-blocks">0</span>
+                <button class="btn-counter" onclick="changeCalcScore('transfer_blocks', 1)">+</button>
+              </div>
+            </div>
+
+            <!-- Group 2: Level 1 Towers -->
+            <div class="calc-group-title">
+              <span>2. PENYUSUNAN MENARA LEVEL 1 (+600 mm)</span>
+              <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted);">Bab 8.2</span>
+            </div>
+
+            <div class="calc-counter-row">
+              <div class="calc-label-wrap">
+                <strong>Earth Block Dasar (Bottom Layer L1)</strong>
+                <small>+10 Poin / Blok (Kardus 350 mm)</small>
+              </div>
+              <div class="counter-controls">
+                <button class="btn-counter" onclick="changeCalcScore('l1_earth_bottom', -1)">−</button>
+                <span class="counter-val" id="val-l1-bottom">0</span>
+                <button class="btn-counter" onclick="changeCalcScore('l1_earth_bottom', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="calc-counter-row">
+              <div class="calc-label-wrap">
+                <strong>Earth Block Tengah (Middle Layer L1)</strong>
+                <small>+20 Poin / Blok (Kardus 350 mm)</small>
+              </div>
+              <div class="counter-controls">
+                <button class="btn-counter" onclick="changeCalcScore('l1_earth_mid', -1)">−</button>
+                <span class="counter-val" id="val-l1-mid">0</span>
+                <button class="btn-counter" onclick="changeCalcScore('l1_earth_mid', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="calc-counter-row">
+              <div class="calc-label-wrap">
+                <strong>Sky Block Puncak (Top Crown L1)</strong>
+                <small>+40 Poin / Blok (Warna Tim Menghadap Atas)</small>
+              </div>
+              <div class="counter-controls">
+                <button class="btn-counter" onclick="changeCalcScore('l1_sky_top', -1)">−</button>
+                <span class="counter-val" id="val-l1-sky">0</span>
+                <button class="btn-counter" onclick="changeCalcScore('l1_sky_top', 1)">+</button>
+              </div>
+            </div>
+
+            <!-- Group 3: Level 2 Towers -->
+            <div class="calc-group-title">
+              <span>3. PENYUSUNAN MENARA LEVEL 2 (+900 mm - SHARED)</span>
+              <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted);">Bab 8.2</span>
+            </div>
+
+            <div class="calc-counter-row">
+              <div class="calc-label-wrap">
+                <strong>Earth Block Dasar (Bottom Layer L2)</strong>
+                <small>+20 Poin / Blok</small>
+              </div>
+              <div class="counter-controls">
+                <button class="btn-counter" onclick="changeCalcScore('l2_earth_bottom', -1)">−</button>
+                <span class="counter-val" id="val-l2-bottom">0</span>
+                <button class="btn-counter" onclick="changeCalcScore('l2_earth_bottom', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="calc-counter-row">
+              <div class="calc-label-wrap">
+                <strong>Earth Block Tengah (Middle Layer L2)</strong>
+                <small>+40 Poin / Blok</small>
+              </div>
+              <div class="counter-controls">
+                <button class="btn-counter" onclick="changeCalcScore('l2_earth_mid', -1)">−</button>
+                <span class="counter-val" id="val-l2-mid">0</span>
+                <button class="btn-counter" onclick="changeCalcScore('l2_earth_mid', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="calc-counter-row">
+              <div class="calc-label-wrap">
+                <strong>Sky Block Puncak (Top Crown L2)</strong>
+                <small>+80 Poin / Blok (Warna Tim Menghadap Atas)</small>
+              </div>
+              <div class="counter-controls">
+                <button class="btn-counter" onclick="changeCalcScore('l2_sky_top', -1)">−</button>
+                <span class="counter-val" id="val-l2-sky">0</span>
+                <button class="btn-counter" onclick="changeCalcScore('l2_sky_top', 1)">+</button>
+              </div>
+            </div>
+
+            <!-- Group 4: Mustika Nusantara Enshrinement -->
+            <div class="mustika-switch-box">
+              <div class="mustika-switch-header">
+                <div>
+                  <strong style="font-size:14px; display:block;">4. MUSTIKA ENSHRINEMENT (250 PTS)</strong>
+                  <small style="color:var(--text-muted); font-size:11px;">Bab 8.5 — Central Pillar L2</small>
+                </div>
+                <button class="btn-toggle-mustika locked" id="btn-enshrine-mustika" onclick="toggleMustikaEnshrinement()">
+                  🔒 TERKUNCI
+                </button>
+              </div>
+              <p style="font-size:11px; color:var(--text-secondary); margin-top:8px;" id="mustika-lock-hint">
+                ⚠️ Mustika terkunci! Penuhi Sanctuary Mandate terlebih dahulu (Minimal 2 menara lengkap, salah satunya di Shared Area).
+              </p>
+            </div>
+
+            <div style="margin-top:20px; display:flex; gap:10px;">
+              <button class="button button-secondary" onclick="resetCalculatorScore()" style="flex:1;">
+                🔄 Reset Hitungan Skor
+              </button>
+            </div>
+          </div>
+
+          <!-- Total Score Summary Panel -->
+          <div class="score-summary-panel">
+            <div class="total-score-badge">
+              <small>TOTAL ACCUMULATED SCORE</small>
+              <strong id="live-total-score">0</strong>
+              <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-secondary);">
+                STATUS: LAGA BERLANGSUNG (180 DETIK)
+              </span>
+            </div>
+
+            <!-- Sanctuary Mandate Validation Box -->
+            <div class="mandate-status-card unfulfilled" id="mandate-card">
+              <div class="mandate-header">
+                <strong>SANCTUARY MANDATE</strong>
+                <span class="mandate-badge unmet" id="mandate-badge-text">BELUM TERPENUHI</span>
+              </div>
+              <ul class="mandate-checklist">
+                <li id="check-cond-1">❌ Minimal 2 Menara Lengkap berdiri (2 Earth + 1 Sky)</li>
+                <li id="check-cond-2">❌ Minimal 1 Menara berada di L1 Shared atau L2 Area</li>
+              </ul>
+            </div>
+
+            <!-- Point Breakdown Table -->
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--text-secondary); display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between;">
+                <span>Logistik TR:</span>
+                <span id="sub-tr-pts" style="color:var(--text-primary);">0 pt</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>Menara Level 1:</span>
+                <span id="sub-l1-pts" style="color:var(--text-primary);">0 pt</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>Menara Level 2:</span>
+                <span id="sub-l2-pts" style="color:var(--text-primary);">0 pt</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>Mustika Artifact:</span>
+                <span id="sub-mustika-pts" style="color:var(--text-primary);">0 pt</span>
+              </div>
+            </div>
+
+            <!-- Tie-Breaker Priority Guide -->
+            <div style="margin-top:20px; padding:12px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border-color); font-size:11px; color:var(--text-muted); line-height:1.6;">
+              <strong style="color:var(--text-primary); display:block; margin-bottom:4px;">Kriteria Penentu Kemenangan (Tie-Break):</strong>
+              1. Tim yang berhasil menaruh Mustika di Central Pillar.<br />
+              2. Jumlah Sky Block warna tim di puncak menara terbanyak.<br />
+              3. Jumlah total blok di Level 2 terbanyak.<br />
+              4. Jumlah total blok di Level 1 terbanyak.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: TECHNICAL REGULATIONS, PENALTY MATRIX & ROBOT CONSTRAINTS -->
+    <section class="section container" id="rules">
+      <div class="section-heading">
+        <span class="section-index">06 / REGULASI TEKNIS &amp; MATRIKS PENALTI</span>
+        <h2>Standar Kompetisi &amp; Kode Pelanggaran.<br /><span class="muted-heading">Pahami perbedaan Failure, Forced Retry, dan Diskualifikasi untuk menjaga keutuhan poin dan strategi tim.</span></h2>
+        <p class="heading-note">
+          Rangkuman spesifikasi teknis robot dan kategori sanksi resmi sesuai Bab 5, 6, 7, 11, dan 12 Official Rulebook V1.1.
+        </p>
+      </div>
+
+      <!-- PENALTY COMPARISON MATRIX TABLE -->
+      <div class="matrix-container">
+        <table class="penalty-table">
+          <thead>
+            <tr>
+              <th>KATEGORI SANKSI</th>
+              <th>PEMICU PELANGGARAN</th>
+              <th>STATUS OBJEK</th>
+              <th>STATUS ROBOT DI LAPANGAN</th>
+              <th>DAMPAK SKOR TIM</th>
+              <th>BAB ATURAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge-penalty-failure">FAILURE</span></td>
+              <td>
+                • Blok Earth menyentuh lantai arena di luar Storage, Transfer, atau Building Spot.<br />
+                • Urutan penumpukan blok terbalik/keliru (misal Sky Block di bawah atau di atas 1 Earth Block saja).
+              </td>
+              <td>Blok dinyatakan tidak valid dan disingkirkan oleh wasit saat aman.</td>
+              <td><strong style="color:var(--accent-emerald);">TIDAK DI-RETRY!</strong> Robot bebas melanjutkan aksi tanpa henti.</td>
+              <td>Poin transfer (+5 pt) yang sudah diraih tetap sah. Tidak ada penalti skor.</td>
+              <td>Bab 2 &amp; 5.1.4</td>
+            </tr>
+            <tr>
+              <td><span class="badge-penalty-forced">FORCED RETRY</span></td>
+              <td>
+                • <em>Area Violation:</em> Bagian TR melewati batas L1 di luar Transfer Area.<br />
+                • Membawa blok melebihi kuota (TR &gt; 3, BR &gt; 2) atau membawa blok bersama Mustika.<br />
+                • Menjatuhkan Sky Block di lantai atau memindahkannya ke menara lain.<br />
+                • Menjatuhkan Mustika saat serah terima (Dropped Mustika).<br />
+                • Menyeret atau mendorong blok di sepanjang lantai arena.<br />
+                • Kontak fisik / mengganggu manipulasi objek tim lawan di Shared Area.<br />
+                • Menyebabkan menara roboh atau blok bergeser dari Building Spot.
+              </td>
+              <td>Blok ekstra gugur; Mustika dikembalikan ke Mustika Pillar; Menara yang roboh direstorasi wasit ke kondisi persis sebelum insiden.</td>
+              <td><strong style="color:#f87171;">ROBOT DIHENTIKAN WASIT</strong> dan wajib mundur ke Retry Zone sebelum restart.</td>
+              <td>Kehilangan momentum waktu (180 detik tetap berjalan). Poin menara yang direstorasi tetap dihitung.</td>
+              <td>Bab 6.1 – 6.6</td>
+            </tr>
+            <tr>
+              <td><span class="badge-penalty-dq">DISKUALIFIKASI (DQ)</span></td>
+              <td>
+                • Merusak lapangan, objek, atau robot lawan secara sengaja.<br />
+                • Bahaya keselamatan fatal (baterai terbakar/keluar asap, serpihan terlempar).<br />
+                • Perilaku tidak sportif / mendebat wasit secara agresif.<br />
+                • Anggota tim menyentuh robot/objek tanpa instruksi wasit atau tanpa deklarasi retry sah.
+              </td>
+              <td>Seluruh pertandingan dihentikan seketika.</td>
+              <td>Kedua robot ditarik keluar dari arena kompetisi.</td>
+              <td><strong style="color:#ef4444;">SKOR PERTANDINGAN = 0 (Kalah Otomatis)</strong>.</td>
+              <td>Bab 7.1 – 7.4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TECHNICAL CONSTRAINTS FLASHCARDS -->
+      <div class="rules-grid">
+        <div class="rule-card">
+          <span class="rule-card-badge badge-constraint">ISTILAH RESMI (BAB 2)</span>
+          <h3>Perbedaan "Area" vs "Zona"</h3>
+          <p>
+            <strong>Area:</strong> Mengacu pada seluruh wilayah operasional lomba di Game Field (Ground Area, Level 1 Area, Level 2 Area, Transfer Area, Storage Area, Shared Area).<br />
+            <strong>Zona:</strong> HANYA digunakan untuk kotak titik awal dan retry robot (Start/Retry Zone Red &amp; Blue 700 × 700 mm, L1 Retry Zone 700 × 700 mm).
+          </p>
+          <div class="rule-card-footer">KLASIFIKASI: Area Operasi vs Zona Reset</div>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-card-badge badge-constraint">DIMENSI ROBOT (BAB 11.5 - 11.7)</span>
+          <h3>Ukuran &amp; Start Zone</h3>
+          <p>
+            <strong>Dimensi Awal:</strong> Wajib muat dalam kubus <strong>700 × 700 × 700 mm</strong> di Start/Retry Zone sebelum laga dimulai.<br />
+            <strong>Dimensi Mengembang:</strong> Maksimal <strong>1400 × 1000 × 1200 mm</strong>.<br />
+            Tim bebas memilih zona start untuk TR dan BR.
+          </p>
+          <div class="rule-card-footer">BATAS AWAL: 700 × 700 × 700 mm</div>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-card-badge badge-constraint">MASSA &amp; TEGANGAN (BAB 11.8 - 11.14)</span>
+          <h3>Massa 60 kg &amp; Maksimal 24V</h3>
+          <p>
+            Total berat gabungan (TR + BR + baterai + joystick manual) <strong>maksimal 60 kg</strong>.<br />
+            Tegangan nominal baterai <strong>maksimal 24V</strong>, tegangan absolut sirkuit max 42V.<br />
+            Dilarang keras memakai aki timbal (lead-acid)! Tekanan pneumatik maks 600 kPa.
+          </p>
+          <div class="rule-card-footer">DAYA: Nominal &le; 24V | Pneumatik &le; 600 kPa</div>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-card-badge badge-retry">KOMUNIKASI ROBOT (BAB 11.11)</span>
+          <h3>Dilarang Komunikasi TR-BR</h3>
+          <p>
+            TR dan BR <strong>dilarang keras bertukar sinyal/data</strong> dalam bentuk apapun selama laga!<br />
+            BR harus mengambil keputusan murni secara otonom menggunakan sensor onboard kamera/LiDAR/IMU sendiri.
+          </p>
+          <div class="rule-card-footer">PELANGGARAN: Forced Retry</div>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-card-badge badge-retry">FITUR KEAMANAN (BAB 11.4 &amp; 12.2)</span>
+          <h3>E-Stop Fisik &amp; Remote Freeze</h3>
+          <p>
+            <strong>Hardwired Emergency STOP:</strong> Tombol fisik merah wajib ada di setiap robot.<br />
+            <strong>Remote Freeze/Resume:</strong> Wajib terpasang pada BR otonom agar dapat dijeda seketika saat wasit memberi instruksi penanganan arena.
+          </p>
+          <div class="rule-card-footer">STANDAR: Hardwired E-Stop &amp; Remote Freeze</div>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-card-badge badge-constraint">KEPEMILIKAN BLOK (BAB 8.3 &amp; 8.4)</span>
+          <h3>Multi-Team Towers &amp; Stealing</h3>
+          <p>
+            Di Shared Area, menara dapat tersusun dari blok kedua tim. Poin Earth Block (10/20 pt di L1, 20/40 pt di L2) <strong>terkunci permanen</strong> untuk tim yang menaruhnya. Tim lawan hanya dapat merebut poin puncak dengan membalik Sky Block.
+          </p>
+          <div class="rule-card-footer">HAK POIN: Earth Locked | Sky Reversible</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: OFFICIAL FAQ & CRITICAL CASE CLARIFICATIONS -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-index">07 / TANYA JAWAB REGULASI &amp; KASUS KRITIS (FAQ)</span>
+          <h2>Klarifikasi &amp; Pertanyaan Peserta.<br /><span class="muted-heading">Jawaban otoritatif atas keraguan dan skenario taktis lomba Robocon 2027.</span></h2>
+          <p class="heading-note">
+            Disusun berdasarkan regulasi resmi Bab 1 sampai 14 dan addendum Rulebook V1.1 untuk memandu tim perancang robot Indonesia.
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apakah pertandingan langsung selesai jika Mustika berhasil ditaruh di Central Pillar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                <strong>TIDAK!</strong> Pada ABU Robocon 2027 Solo, <strong>tidak ada early victory atau instant win (KO)</strong>. Pertandingan akan terus berlangsung hingga durasi 3 menit (180 detik) tepat berakhir. Tim yang berhasil menyemayamkan Mustika berhak atas <strong>250 poin</strong>, namun kedua tim tetap dapat terus menyusun menara atau membalik Sky Block hingga detik terakhir untuk mengumpulkan poin tertinggi.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana jika Mustika terjatuh menyentuh lantai saat serah terima di Transfer Area?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sesuai Bab 3.4.5 dan 6.2, Mustika yang menyentuh lantai dinyatakan sebagai <strong>Dropped Mustika</strong>. Bola tersebut akan dikeluarkan dari arena oleh wasit atau asisten pertandingan saat aman. Mustika Pillar di Ground Area kemudian akan diisi ulang dengan bola baru. Tim harus kembali mengambil Mustika dari Mustika Pillar (hanya setelah kondisi aman dan jika tim masih memenuhi Sanctuary Mandate).
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apakah Transporter Robot (TR) boleh naik lewat Ramp menuju Level 1?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                <strong>DILARANG KERAS!</strong> Sesuai Bab 3.2.1 dan 4.3.1, TR hanya diizinkan beroperasi di <strong>Ground Area dan memasuki batas Transfer Area</strong> saja. Bagian tubuh atau mekanisme TR yang melintasi proyeksi vertikal batas Level 1 di luar Transfer Area merupakan <strong>Area Violation</strong> yang menyebabkan <strong>Forced Retry</strong> seketika!
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Jika tim lawan membalik (flip) Sky Block di menara kita, apakah poin Earth Block kita hilang?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                <strong>TIDAK SAMA SEKALI!</strong> Sesuai Bab 8.3.3, poin dari Earth Block dasar dan tengah yang telah diletakkan dengan sah bersifat <strong>locked (terkunci)</strong> bagi tim yang pertama kali meletakkannya. Membalik Sky Block hanya memindahkan poin Sky Block (40 pt di L1 atau 80 pt di L2) ke tim yang warnanya menghadap ke atas, tanpa memengaruhi poin Earth Block di bawahnya.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana cara Builder Robot (BR) naik ke Level 2 jika tangga resmi dihapus di V1.1?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sesuai Bab 2 &amp; 4.3.2 (Pembaruan V1.1), tidak ada tangga antara Level 1 dan Level 2. Ketinggian Level 2 adalah <strong>300 mm di atas Level 1</strong> (total 900 mm dari Ground). BR dirancang bebas memanjat atau menggunakan mekanisme lifting/suspensi pemanjat dari <strong>sisi mana pun di permukaan Level 1</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Jika blok Earth jatuh ke lantai arena di luar area legal, apakah robot terkena Forced Retry?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                <strong>TIDAK TERKENA FORCED RETRY!</strong> Sesuai Bab 5.1.4, kejadian ini berstatus <strong>FAILURE</strong>. Blok Earth tersebut dinyatakan tidak valid dan akan disingkirkan oleh wasit saat aman. Robot bebas melanjutkan operasinya tanpa harus kembali ke Retry Zone, dan poin transfer (+5 pt) yang sudah diperoleh sebelumnya tetap sah.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Kapan Builder Robot (BR) boleh menggunakan L1 Retry Zone saat terjadi retry?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sesuai Bab 5.3.1, BR dapat memilih untuk kembali ke <strong>L1 Retry Zone (700 × 700 mm)</strong> HANYA jika BR telah <strong>memasuki Level 1 secara penuh setidaknya satu kali</strong> selama pertandingan. Jika belum pernah masuk L1 sepenuhnya, BR wajib kembali ke Start/Retry Zone di Ground Area.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apa kriteria penentu pemenang jika skor akhir kedua tim sama persis (Tie)?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sesuai Bab 9.3, jika total skor seri pada detik ke-180, pemenang diputuskan berdasarkan hierarki tie-breaker:
+                <br />1. Tim yang berhasil menyemayamkan Mustika di Central Pillar.
+                <br />2. Tim dengan jumlah Sky Block berorientasi warna tim terbanyak di puncak menara di seluruh arena.
+                <br />3. Tim dengan jumlah total blok (Earth + Sky) terbanyak di Level 2.
+                <br />4. Tim dengan jumlah total blok (Earth + Sky) terbanyak di Level 1.
+                <br />5. Penilaian akhir dewan juri berdasarkan merit teknis dan sportivitas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 08: PLAYABLE MINI-GAME: MUSTIKA ARENA QUEST (CANVAS 2D) -->
+    <section class="section container game-section" id="game">
+      <div class="section-heading">
+        <span class="section-index">08 / PLAYABLE MINI-GAME SIMULATOR</span>
+        <h2>Mustika Arena Quest.<br /><span class="muted-heading">Uji kelihaian kendali TR &amp; BR dalam simulasi arena 90 detik.</span></h2>
+        <p class="heading-note">
+          Gerakkan robot TR mengambil Earth Block di Storage Area dan antar ke Transfer Area, lalu kendalikan BR untuk menyusun menara dan mengunci Mustika!
+        </p>
+      </div>
+
+      <!-- Game Cabinet -->
+      <div class="game-cabinet">
+        <div class="game-cabinet-header">
+          <div class="game-title-badge">
+            <span>🎮 MUSTIKA ARENA QUEST V1.1</span>
+            <small style="color:var(--text-muted);">[ABU ROBOCON 2027 SIM]</small>
+          </div>
+          <div class="game-scoreboard">
+            <span class="game-score-item">SCORE: <strong id="game-score">0</strong></span>
+            <span class="game-score-item">TIMER: <strong id="game-timer">90s</strong></span>
+            <span class="game-score-item">HIGH: <strong id="game-high-score">0</strong></span>
+          </div>
+        </div>
+
+        <div class="game-canvas-wrapper">
+          <canvas id="mustika-game-canvas" width="640" height="380"></canvas>
+
+          <!-- Overlay Screen -->
+          <div class="game-overlay-screen" id="game-overlay">
+            <h3 id="game-overlay-title">MUSTIKA ARENA QUEST</h3>
+            <p id="game-overlay-desc">
+              Ambil Earth Blocks 🟫 di Storage Area, antar ke Transfer Area, dan susun menara hingga Mustika 🏐 muncul di Central Pillar!
+            </p>
+            <div class="game-ctrl-guide">KONTROL: Panah / WASD / Tombol Virtual D-Pad di Layar</div>
+            <button class="button button-primary" id="btn-start-game" onclick="startMustikaGame()">
+              ▶ Mulai Game Arena!
+            </button>
+          </div>
+        </div>
+
+        <!-- Arcade On-Screen Controls -->
+        <div class="game-cabinet-footer">
+          <!-- D-Pad -->
+          <div class="game-arcade-dpad">
+            <button class="arcade-btn arcade-btn-up" id="game-btn-up">▲</button>
+            <button class="arcade-btn arcade-btn-left" id="game-btn-left">◀</button>
+            <button class="arcade-btn arcade-btn-down" id="game-btn-down">▼</button>
+            <button class="arcade-btn arcade-btn-right" id="game-btn-right">▶</button>
+          </div>
+
+          <!-- Actions -->
+          <div class="game-action-triggers">
+            <button class="btn-game-action boost" onclick="triggerGameBoost()">
+              ⚡ BOOST (+80% SPEED)
+            </button>
+            <button class="btn-game-action reset" onclick="startMustikaGame()">
+              🔄 RESTART LAGA
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 09: ROBOTIC SOUNDBOARD SECTION -->
+    <section class="section container" id="soundboard">
+      <div class="section-heading">
+        <span class="section-index">09 / ROBOTIC TACTILE SOUNDBOARD</span>
+        <h2>Audio FX Laboratorium Robotika.<br /><span class="muted-heading">Dengarkan efek suara mekanikal yang disintesis langsung oleh browser.</span></h2>
+        <p class="heading-note">
+          Setiap komponen robotika memiliki suara karakteristik tersendiri: dari hentakan relai 5V hingga semburan kompresor pneumatik 600 kPa.
+        </p>
+      </div>
+
+      <div class="soundboard-deck">
+        <button class="soundboard-btn" onclick="playSpecificSound('relay')">
+          <span class="soundboard-icon">⚡</span>
+          <span>Relay Switch</span>
+          <small>5V Mechanical Click</small>
+        </button>
+
+        <button class="soundboard-btn" onclick="playSpecificSound('lidar')">
+          <span class="soundboard-icon">📡</span>
+          <span>LiDAR Pulse</span>
+          <small>360° Sweep Frequency</small>
+        </button>
+
+        <button class="soundboard-btn" onclick="playSpecificSound('motor')">
+          <span class="soundboard-icon">⚙️</span>
+          <span>Servo Whir</span>
+          <small>Planetary DC RPM</small>
+        </button>
+
+        <button class="soundboard-btn" onclick="playSpecificSound('pneumatic')">
+          <span class="soundboard-icon">💨</span>
+          <span>Pneumatic Solenoid</span>
+          <small>600 kPa Pssht Air</small>
+        </button>
+
+        <button class="soundboard-btn" onclick="playSpecificSound('whistle')">
+          <span class="soundboard-icon">🎺</span>
+          <span>Referee Buzzer</span>
+          <small>Start / Stop Signal</small>
+        </button>
+
+        <button class="soundboard-btn" onclick="playSpecificSound('victory')">
+          <span class="soundboard-icon">🏆</span>
+          <span>Mustika Enshrine</span>
+          <small>250 Pts Victory Fanfare</small>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">R</span>
+        <span>ROBOCON<span class="brand-dot">2027</span></span>
+      </a>
+
+      <div class="footer-links">
+        <a href="#about">Konsep</a>
+        <a href="#updates">12 Aturan V1.1</a>
+        <a href="#match-flow">Alur Laga</a>
+        <a href="#field">Peta Lapangan</a>
+        <a href="#calculator">Kalkulator Skor</a>
+        <a href="#rules">Regulasi &amp; Penalti</a>
+        <a href="#faq">FAQ</a>
+        <a href="#game">Mini-Game</a>
+        <a href="#soundboard">Soundboard</a>
+      </div>
+
+      <div class="footer-copy">
+        ABU ROBOCON 2027 SOLO, INDONESIA · THE PURSUIT OF MUSTIKA NUSANTARA · RULEBOOK V1.1
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK DOCK -->
+  <div class="floating-dock">
+    <button class="dock-btn" id="btn-back-to-top" aria-label="Kembali ke atas" title="Kembali ke atas">
+      <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+    <button class="dock-btn" id="btn-floating-theme" aria-label="Ganti tema gelap/terang" title="Ganti Mode Gelap / Terang">
+      🌓
+    </button>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast" role="alert" aria-live="polite">
+    <span class="toast-dot"></span>
+    <span id="toast-text">Notifikasi</span>
+  </div>
+
+  <!-- COMMAND PALETTE MODAL (CTRL + K) -->
+  <div class="cmd-palette-overlay" id="cmd-palette" aria-hidden="true">
+    <div class="cmd-palette-box">
+      <input class="cmd-search-input" id="cmd-input" type="text" placeholder="Ketik perintah (lapangan, kalkulator, game, mustika, suara, tema)..." />
+      <div class="cmd-results-list" id="cmd-list"></div>
+    </div>
+  </div>
+
+  <!-- OBJECT SPECS MODAL (MUSTIKA & BLOCKS) -->
+  <div class="modal-overlay" id="object-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeObjectModal()" aria-label="Tutup modal">✕</button>
+      <div class="modal-content">
+        <span class="modal-badge" id="obj-modal-badge">SPESIFIKASI OBJEK RESMI</span>
+        <h3 id="obj-modal-title">Bola Mustika &amp; Blok Menara</h3>
+        <p class="modal-body" id="obj-modal-desc">
+          Rincian dimensi, material, berat, dan regulasi penanganan objek perlombaan ABU Robocon 2027 Solo.
+        </p>
+
+        <div class="modal-specs-list" id="obj-modal-grid">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div class="modal-actions">
+          <button class="button button-primary" onclick="closeObjectModal()">Tutup [Esc]</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROBOT ROLE MODAL (TR & BR) -->
+  <div class="modal-overlay" id="robot-role-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeRobotRoleModal()" aria-label="Tutup modal">✕</button>
+      <div class="modal-content">
+        <span class="modal-badge" id="robot-modal-badge">PANDUAN PERAN ROBOT</span>
+        <h3 id="robot-modal-title">Transporter Robot (TR)</h3>
+        <p class="modal-body" id="robot-modal-desc"></p>
+        <div class="modal-specs-list" id="robot-modal-grid"></div>
+        <div class="modal-actions">
+          <button class="button button-primary" onclick="closeRobotRoleModal()">Tutup [Esc]</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
